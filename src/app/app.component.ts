@@ -43,7 +43,7 @@ export class AppComponent {
     const loginOptions: FacebookLoginOptions = {
       enable_profile_selector: true,
       return_scopes: true,
-      scope: 'public_profile,user_friends,email,pages_show_list'
+      scopes: 'public_profile,user_friends,email,pages_show_list'
     };
 
     this.fb.login(loginOptions)
@@ -52,6 +52,12 @@ export class AppComponent {
       })
       .catch(this.handleError);
 
+  }
+
+  getLoginStatus() {
+    this.fb.getLoginStatus()
+      .then(console.log.bind(console))
+      .catch(console.error.bind(console));
   }
 
 
