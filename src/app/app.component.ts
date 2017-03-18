@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
-import {FacebookService, FacebookLoginResponse, FacebookLoginOptions, FacebookUiParams} from 'ng2-facebook-sdk';
-import {FacebookUiResponse} from "ng2-facebook-sdk/dist/ng2-facebook-sdk";
+import { FacebookService, LoginResponse, LoginOptions, UIResponse, UIParams } from 'ng2-facebook-sdk';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,6 @@ import {FacebookUiResponse} from "ng2-facebook-sdk/dist/ng2-facebook-sdk";
 })
 export class AppComponent {
 
-  title = 'Helloworld';
 
   constructor(
     private fb: FacebookService
@@ -29,7 +27,7 @@ export class AppComponent {
    */
   login() {
     this.fb.login()
-      .then((res: FacebookLoginResponse) => {
+      .then((res: LoginResponse) => {
         console.log('Logged in', res);
       })
       .catch(this.handleError);
@@ -40,14 +38,14 @@ export class AppComponent {
    */
   loginWithOptions() {
 
-    const loginOptions: FacebookLoginOptions = {
+    const loginOptions: LoginOptions = {
       enable_profile_selector: true,
       return_scopes: true,
-      scopes: 'public_profile,user_friends,email,pages_show_list'
+      scope: 'public_profile,user_friends,email,pages_show_list'
     };
 
     this.fb.login(loginOptions)
-      .then((res: FacebookLoginResponse) => {
+      .then((res: LoginResponse) => {
         console.log('Logged in', res);
       })
       .catch(this.handleError);
@@ -90,13 +88,13 @@ export class AppComponent {
    */
   share() {
 
-    const options: FacebookUiParams = {
+    const options: UIParams = {
       method: 'share',
       href: 'https://github.com/zyramedia/ng2-facebook-sdk'
     };
 
     this.fb.ui(options)
-      .then((res: FacebookUiResponse) => {
+      .then((res: UIResponse) => {
         console.log('Got the users profile', res);
       })
       .catch(this.handleError);
