@@ -17,4 +17,12 @@ jobs:
          paths:
            - ~/ng2-facebook-sdk/node_modules/
       - run: npm run ng -- build --prod
-      - run: cd ../
+      - run: git checkout gh-pages
+      - run: mv dist/* .
+      - run: rm -rf dist node_modules
+      - run: git config --global user.name="ZM Bot"
+      - run: git config --global user.email="ibby93+zmbot@gmail.com"
+      - run: git add .
+      - run: git commit -am "Automated build"
+      - add_ssh_keys
+      - run: git push origin gh-pages
