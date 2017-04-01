@@ -22,11 +22,12 @@ jobs:
       - add_ssh_keys
       - run:
          name: Deploying to gh-pages
-          git checkout gh-pages
-          mv dist/* .
-          rm -rf dist node_modules
-          git config --global user.name "ZM Bot"
-          git config --global user.email "ibby93+zmbot@gmail.com"
-          git add .
-          git commit -am "Automated build [ci skip]"
-          git push origin gh-pages
+         command: |
+           git checkout gh-pages
+           mv dist/* .
+           rm -rf dist node_modules
+           git config --global user.name "ZM Bot"
+           git config --global user.email "ibby93+zmbot@gmail.com"
+           git add .
+           git commit -am "Automated build [ci skip]"
+           git push origin gh-pages
