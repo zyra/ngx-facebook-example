@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 import { FacebookModule } from 'ng2-facebook-sdk';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -15,7 +16,7 @@ import { FacebookModule } from 'ng2-facebook-sdk';
     BrowserModule,
     FormsModule,
     HttpModule,
-    FacebookModule
+    FacebookModule.forRoot()
   ],
   bootstrap: [AppComponent]
 })
