@@ -27,10 +27,9 @@
   },
   "devDependencies": {
     "@angular/compiler-cli": "^2.3.1",
-    "@types/jasmine": "2.5.38",
-    "@types/node": "^6.0.42",
     "angular-cli": "1.0.0-beta.24",
     "codelyzer": "~2.0.0-beta.1",
+    "ng2-facebook-sdk": "^2.0.0-rc.3",
     "ts-node": "1.2.1",
     "tslint": "^4.0.2",
     "typescript": "~2.0.3"
