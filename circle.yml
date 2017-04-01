@@ -16,13 +16,17 @@ jobs:
          key: node_modules_{{ checksum "package.json" }}
          paths:
            - ~/ng2-facebook-sdk/node_modules/
-      - run: npm run build:prod
-      - run: git checkout gh-pages
-      - run: mv dist/* .
-      - run: rm -rf dist node_modules
-      - run: git config --global user.name "ZM Bot"
-      - run: git config --global user.email "ibby93+zmbot@gmail.com"
-      - run: git add .
-      - run: git commit -am "Automated build"
+      - run:
+         name: Building project
+         command: npm run build:prod
       - add_ssh_keys
-      - run: git push origin gh-pages
+      - run:
+         name: Deploying to gh-pages
+          git checkout gh-pages
+          mv dist/* .
+          rm -rf dist node_modules
+          git config --global user.name "ZM Bot"
+          git config --global user.email "ibby93+zmbot@gmail.com"
+          git add .
+          git commit -am "Automated build [ci skip]"
+          git push origin gh-pages
