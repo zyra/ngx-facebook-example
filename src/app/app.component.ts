@@ -23,7 +23,7 @@ export class AppComponent {
 
     fb.init({
       appId: '1927971220769787',
-      version: 'v2.8'
+      version: 'v2.9'
     });
 
   }
