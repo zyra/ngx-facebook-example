@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/ng2-facebook-sdk-example/
+    working_directory: ~/ngx-facebook-example/
     docker:
       - image: node:7
     branches:
@@ -15,7 +15,7 @@ jobs:
       - save_cache:
          key: node_modules_{{ checksum "package.json" }}
          paths:
-           - ~/ng2-facebook-sdk/node_modules/
+           - ~/ngx-facebook-example/node_modules/
       - run:
          name: Building project
          command: npm run build:prod
