@@ -1,4 +1,4 @@
-Example project for [ng2-facebook-sdk](https://github.com/zyramedia/ng2-facebook-sdk). 
+Example project for [ngx-facebook](https://github.com/zyra/ngx-facebook). 
 
 1. Clone/doenload this repo
 2. Run `npm install` to install dependencies
