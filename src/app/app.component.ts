@@ -1,6 +1,5 @@
-import {Component, ViewChild} from '@angular/core';
-
-import {FacebookService, LoginResponse, LoginOptions, UIResponse, UIParams, FBVideoComponent} from 'ng2-facebook-sdk';
+import { Component, ViewChild } from '@angular/core';
+import { FacebookService, LoginResponse, LoginOptions, UIResponse, UIParams, FBVideoComponent } from 'ngx-facebook';
 
 @Component({
   selector: 'app-root',
