@@ -10,10 +10,10 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-         key: node_modules_{{ checksum "package.json" }}
+         key: npm_{{ checksum "package.json" }}
       - run: npm i
       - save_cache:
-         key: node_modules_{{ checksum "package.json" }}
+         key: npm_{{ checksum "package.json" }}
          paths:
            - ~/ngx-facebook-example/node_modules/
       - run:
