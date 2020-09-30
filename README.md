@@ -1,6 +1,6 @@
 Example project for [ngx-facebook](https://github.com/zyra/ngx-facebook). 
 
-1. Clone/doenload this repo
+1. Clone/download this repo
 2. Run `npm install` to install dependencies
 3. Run `npm start` to run the app locally
 4. Go to https://localhost:4200 in your browser
